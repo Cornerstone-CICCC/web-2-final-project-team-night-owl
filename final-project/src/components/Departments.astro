@@ -1,3 +1,259 @@
+---
+import { Image } from "astro:assets";
+
+import ear from "../assets/img/ear.svg";
+import heart from "../assets/img/heart.svg";
+import tooth from "../assets/img/tooth.svg";
+import arrowRight from "../assets/img/arrow-right.svg";
+---
+
 <section>
-  
+  <div class="title-section">
+    <p>Tagline</p>
+    <h4>Our Healthcare Departments</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <img src={heart.src} alt="Heart icon" />
+      <p>Cardiology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={ear.src} alt="Ear icon" />
+      <p>Gynecology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={ear.src} alt="Ear icon" />
+      <p>Gynecology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={tooth.src} alt="Tooth icon" />
+      <p>Family Medicine</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={tooth.src} alt="Tooth icon" />
+      <p>Family Medicine</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={ear.src} alt="Ear icon" />
+      <p>Gynecology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={heart.src} alt="Heart icon" />
+      <p>Cardiology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={ear.src} alt="Ear icon" />
+      <p>Gynecology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+  </div>
+  <button>View more</button>
 </section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 4.8rem 2.4rem;
+    gap: 8rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .title-section p:first-child {
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  h4 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 130%;
+    text-align: center;
+  }
+
+  .title-section p:last-child {
+    font-size: 1.8rem;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 4.8rem;
+    margin: 0 auto;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(247, 247, 247, 1);
+    padding: 2.4rem 1.6rem;
+    gap: 2.4rem;
+    border-radius: 5px;
+  }
+
+  .card img {
+    padding: 0.8rem;
+  }
+
+  .card p {
+    text-align: center;
+    padding: 0 5rem;
+  }
+
+  .card p:nth-child(2) {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .card p:nth-child(3) {
+    line-height: 150%;
+  }
+
+  .card a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card a:hover {
+    text-decoration: underline;
+  }
+
+  .card:nth-last-child(-n + 4) {
+    display: none;
+  }
+
+  button {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 1.2rem 2.4rem;
+    transition: all 0.5s linear;
+  }
+
+  button:hover {
+    background-color: rgba(247, 247, 247, 1);
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 769px) {
+    section {
+      background-color: rgba(247, 247, 247, 1);
+    }
+    h4 {
+      font-size: 5.6rem;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    @media screen and (min-width: 1440px) {
+      .card-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3.2rem;
+      }
+
+      .card:nth-last-child(-n + 4) {
+        display: flex;
+      }
+    }
+  }
+</style>
