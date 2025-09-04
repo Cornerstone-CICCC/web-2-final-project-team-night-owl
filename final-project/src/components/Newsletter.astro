@@ -155,6 +155,11 @@
       message: message.trim(),
     };
 
+    if (!userInput) {
+      alert("Please enter your email before subscribing.");
+      return;
+    }
+
     emailjs.send(serviceID, templateID, templateParams).then(
       () => {
         alert("Thanks for subscribing!");
