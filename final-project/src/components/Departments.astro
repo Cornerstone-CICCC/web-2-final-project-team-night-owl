@@ -133,8 +133,68 @@ import arrowRight from "../assets/img/arrow-right.svg";
         </span>
       </a>
     </div>
+
+    <div class="card">
+      <img src={ear.src} alt="Ear icon" />
+      <p>Gynecology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={heart.src} alt="Heart icon" />
+      <p>Cardiology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={ear.src} alt="Ear icon" />
+      <p>Gynecology</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
+
+    <div class="card">
+      <img src={tooth.src} alt="Tooth icon" />
+      <p>Family Medicine</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        varius enim in eros elementum tristique.
+      </p>
+      <a href="#">
+        <span>Learn more</span>
+        <span>
+          <img src={arrowRight.src} alt="Arrow Right" />
+        </span>
+      </a>
+    </div>
   </div>
-  <button>View more</button>
+  <button class="view-more-btn">View more</button>
 </section>
 
 <style>
@@ -180,7 +240,7 @@ import arrowRight from "../assets/img/arrow-right.svg";
   }
 
   .card {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -218,8 +278,8 @@ import arrowRight from "../assets/img/arrow-right.svg";
     text-decoration: underline;
   }
 
-  .card:nth-last-child(-n + 4) {
-    display: none;
+  .card:nth-child(-n + 4) {
+    display: flex;
   }
 
   button {
@@ -230,7 +290,8 @@ import arrowRight from "../assets/img/arrow-right.svg";
   }
 
   button:hover {
-    background-color: rgba(247, 247, 247, 1);
+    background-color: black;
+    color: white;
     transform: scale(1.1);
   }
 
@@ -251,9 +312,39 @@ import arrowRight from "../assets/img/arrow-right.svg";
         gap: 3.2rem;
       }
 
-      .card:nth-last-child(-n + 4) {
+      .card:nth-child(-n + 8) {
         display: flex;
       }
     }
   }
 </style>
+
+<script>
+  const viewMoreBtn = document.querySelector(".view-more-btn");
+  const cards = document.querySelectorAll(".card");
+  let expanded = false;
+
+  function updateVisibleCards() {
+    if (!expanded) {
+      cards.forEach((card, index) => {
+        if (window.innerWidth >= 1440) {
+          card.style.display = index < 8 ? "flex" : "none";
+        } else {
+          card.style.display = index < 4 ? "flex" : "none";
+        }
+      });
+    } else {
+      cards.forEach((card) => (card.style.display = "flex"));
+    }
+  }
+
+  viewMoreBtn?.addEventListener("click", () => {
+    expanded = !expanded;
+    updateVisibleCards();
+    viewMoreBtn.textContent = expanded ? "View less" : "View more";
+  });
+
+  window.addEventListener("resize", updateVisibleCards);
+
+  updateVisibleCards();
+</script>
