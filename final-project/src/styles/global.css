@@ -9,3 +9,15 @@ body{
   font-size: 1.6rem;
   color: #000;
 }
+
+/* Review component */
+.review-pager li{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8D8D8D;
+  cursor: pointer;
+}
+.review-pager li.active{
+  background: #000;
+}
