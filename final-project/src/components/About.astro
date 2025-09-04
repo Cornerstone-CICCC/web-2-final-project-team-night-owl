@@ -1,97 +1,104 @@
----
-// src/components/About.astro
-import Image from '../assets/img/about/about1.png';
----
+
 
 <section class="about">
-  <div class="container">
-    <div class="text">
-      <small>About us</small>
-      <h2>Welcome to Ddsgnr clinic</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-      </p>
-      <p>
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-      </p>
-      <a href="/contact" class="button">Book an Appointment</a>
+    <div class="container">
+      <div class="text">
+        <small>About us</small>
+        <h2>Welcome to Ddsgnr clinic</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+          Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+        </p>
+        <p>
+          Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        </p>
+        <a href="/contact" class="button">Book an Appointment</a>
+      </div>
+  
+      <div class="image-doctor"></div>
     </div>
-    <div class="image">
-      <img src="/src/assets/img/about/about1.png" alt="Doctor image" />
-    </div>
-  </div>
-</section>
-
-<style>
-  .about {
-    padding: 4rem 2rem;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-  }
-
-  .text {
-    max-width: 600px;
-  }
-
-  .text small {
-    display: block;
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .text p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-
-  .button {
-    display: inline-block;
-    background: black;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-
-  .image img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  @media(min-width: 768px) {
+  </section>
+  
+  <style>
+    .about {
+      padding: 4rem 2rem;
+    }
+  
     .container {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    .text, .image {
-      flex: 1;
-    }
-
-    .image {
       display: flex;
-      justify-content: flex-end;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
     }
-
-    .image img {
-      max-width: 400px;
+  
+    .text {
+      max-width: 600px;
+      text-align: center;
     }
-  }
-</style>
+  
+    .text small {
+      display: block;
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    .text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .text p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+  
+    .button {
+      display: inline-block;
+      background: black;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .image-doctor {
+      width: 300px;
+      height: 300px;
+      background-image: url('/src/assets/img/about/about2.png'); /* Imagen mobile por defecto */
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+  
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+  
+      .text {
+        text-align: left;
+      }
+  
+      .button {
+        width: auto;
+        margin: 0;
+      }
+  
+      .image-doctor {
+        width: 400px;
+        height: 400px;
+        background-image: url('/src/assets/img/about/about1.png'); /* Imagen desktop */
+      }
+    }
+  </style>
