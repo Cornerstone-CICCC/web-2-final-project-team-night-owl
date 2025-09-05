@@ -68,118 +68,122 @@ import linkedin from "../assets/img/linkedin.svg";
     </div>
   </div>
   <div class="desktop-footer">
-    <div class="desktop-section-one">
-      <div class="section-one">
-        <div class="logo">
-          <a href="/">
-            <img src={logo.src} alt="Logo" />
-          </a>
-        </div>
-        <p>Join our newsletter to stay up to date on features and releases.</p>
-        <div class="form">
-          <form>
-            <input
-              type="email"
-              id="email-input"
-              name="email"
-              pattern="^[a-zA-Z0-9_.+]+@gmail\.com$"
-              placeholder="Enter your email"
-              autocomplete="off"
-            />
-            <button type="submit" class="submit-btn">Subscribe</button>
-          </form>
+    <div class="wrapper">
+      <div class="desktop-section-one">
+        <div class="section-one">
+          <div class="logo">
+            <a href="/">
+              <img src={logo.src} alt="Logo" />
+            </a>
+          </div>
           <p>
-            By subscribing you agree to with our <a href="#">Privacy Policy</a> and
-            provide consent to receive updates from our company.
+            Join our newsletter to stay up to date on features and releases.
           </p>
+          <div class="form">
+            <form>
+              <input
+                type="email"
+                id="email-input"
+                name="email"
+                pattern="^[a-zA-Z0-9_.+]+@gmail\.com$"
+                placeholder="Enter your email"
+                autocomplete="off"
+              />
+              <button type="submit" class="submit-btn">Subscribe</button>
+            </form>
+            <p>
+              By subscribing you agree to with our <a href="#">Privacy Policy</a
+              > and provide consent to receive updates from our company.
+            </p>
+          </div>
+        </div>
+        <div class="section-two">
+          <div class="about">
+            <p>About Us</p>
+            <li>
+              <a href="/about">Home</a>
+            </li>
+            <li>
+              <a href="/doctors">Doctors</a>
+            </li>
+            <li>
+              <a href="#">Categories</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </div>
+          <div class="category">
+            <p>Category</p>
+            <li>
+              <a href="#">Neurology</a>
+            </li>
+            <li>
+              <a href="#">Surgery</a>
+            </li>
+            <li>
+              <a href="#">Defibrillators</a>
+            </li>
+            <li>
+              <a href="#">Diagnostic</a>
+            </li>
+            <li>
+              <a href="#">Anesthesia</a>
+            </li>
+            <li>
+              <a href="#">Pumps</a>
+            </li>
+          </div>
+          <div class="follow">
+            <p>Follow Us</p>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={facebook.src} alt="Facebook icon" />
+                </span>
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={instagram.src} alt="Instagram icon" />
+                </span>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={twitter.src} alt="Twitter icon" />
+                </span>
+                <span>Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={linkedin.src} alt="LinkedIn icon" />
+                </span>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+          </div>
         </div>
       </div>
-      <div class="section-two">
-        <div class="about">
-          <p>About Us</p>
+      <div class="desktop-section-two">
+        <p>2023 Ddsgnr. All right reserved.</p>
+        <div class="desktop-links">
           <li>
-            <a href="/about">Home</a>
+            <a href="#">Privacy Policy</a>
           </li>
           <li>
-            <a href="/doctors">Doctors</a>
+            <a href="#">Terms of Service</a>
           </li>
           <li>
-            <a href="#">Categories</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <a href="#">Cookies Settings</a>
           </li>
         </div>
-        <div class="category">
-          <p>Category</p>
-          <li>
-            <a href="#">Neurology</a>
-          </li>
-          <li>
-            <a href="#">Surgery</a>
-          </li>
-          <li>
-            <a href="#">Defibrillators</a>
-          </li>
-          <li>
-            <a href="#">Diagnostic</a>
-          </li>
-          <li>
-            <a href="#">Anesthesia</a>
-          </li>
-          <li>
-            <a href="#">Pumps</a>
-          </li>
-        </div>
-        <div class="follow">
-          <p>Follow Us</p>
-          <li>
-            <a href="#">
-              <span class="icon">
-                <img src={facebook.src} alt="Facebook icon" />
-              </span>
-              <span>Facebook</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon">
-                <img src={instagram.src} alt="Instagram icon" />
-              </span>
-              <span>Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon">
-                <img src={twitter.src} alt="Twitter icon" />
-              </span>
-              <span>Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon">
-                <img src={linkedin.src} alt="LinkedIn icon" />
-              </span>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-        </div>
-      </div>
-    </div>
-    <div class="desktop-section-two">
-      <p>2023 Ddsgnr. All right reserved.</p>
-      <div class="desktop-links">
-        <li>
-          <a href="#">Privacy Policy</a>
-        </li>
-        <li>
-          <a href="#">Terms of Service</a>
-        </li>
-        <li>
-          <a href="#">Cookies Settings</a>
-        </li>
       </div>
     </div>
   </div>
@@ -248,10 +252,16 @@ import linkedin from "../assets/img/linkedin.svg";
     }
 
     .desktop-footer {
+      display: block;
+    }
+
+    .wrapper {
       display: flex;
       flex-direction: column;
       gap: 8rem;
       padding: 8rem 6.4rem;
+      max-width: 1440px;
+      margin: 0 auto;
     }
 
     .desktop-section-one {
