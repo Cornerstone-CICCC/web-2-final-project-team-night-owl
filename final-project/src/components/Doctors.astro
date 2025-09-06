@@ -1,139 +1,191 @@
 ---
-// src/components/Doctors.astro
+import docImg from '../assets/img/doctors/doc.png';
 import doc1 from '../assets/img/doctors/doc1.png';
 import doc2 from '../assets/img/doctors/doc2.png';
 import doc3 from '../assets/img/doctors/doc3.png';
 import doc4 from '../assets/img/doctors/doc4.png';
 import doc5 from '../assets/img/doctors/doc5.png';
 import doc6 from '../assets/img/doctors/doc6.png';
-
-const doctors = [
-  {
-    image: doc1,
-    name: 'Dr. Mazen E. Ganim',
-    credentials: 'MBBS, MS, DM Urology',
-    specialty: 'Family Medicine'
-  },
-  {
-    image: doc2,
-    name: 'Dr. Mazen E. Ganim',
-    credentials: 'MBBS, MD, DM Rheumatology',
-    specialty: 'Pathology'
-  },
-  {
-    image: doc3,
-    name: 'Dr. Howard D. Axe',
-    credentials: 'MBBS, MD Anesthesia',
-    specialty: 'Obstetrics'
-  },
-  {
-    image: doc4,
-    name: 'Dr. Mahsa Rezaei, MD',
-    credentials: 'MBBS, MD, DM Cardiology',
-    specialty: 'Emergency Medicine'
-  },
-  {
-    image: doc5,
-    name: 'Dr. Dilip Anmangandla, MD',
-    credentials: 'MBBS, MS Gyne & Obs',
-    specialty: 'Urology'
-  },
-  {
-    image: doc6,
-    name: 'Dr. Marion Carson, MD',
-    credentials: 'MBBS, MS, Mch Neurosurgery',
-    specialty: 'Neurology'
-  }
-];
 ---
+
+<section class="why-choose">
+  <div class="container">
+    <div class="text-center">
+      <small>Why choose us</small>
+      <h2>Why choose Ddsgnr clinic?</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h4>Easy booking</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+      </div>
+      <div class="feature">
+        <h4>Flexible schedule</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+      </div>
+      <div class="image-center">
+        <img src={docImg} alt="Doctor" />
+      </div>
+      <div class="feature">
+        <h4>Experience</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+      </div>
+      <div class="feature">
+        <h4>Best price guarantee</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <a href="/contact" class="button">Book an Appointment</a>
+      <a href="#" class="button secondary">Learn more →</a>
+    </div>
+  </div>
+</section>
 
 <section class="doctors">
   <div class="container">
-    <div class="title">
+    <div class="text-center">
       <small>Doctors</small>
       <h2>Doctors</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
 
     <div class="grid">
-      {doctors.map(doc => (
-        <div class="card">
-          <img src={doc.image} alt={doc.name} />
-          <h3>{doc.name}</h3>
-          <p class="credentials">{doc.credentials}</p>
-          <p class="specialty">{doc.specialty}</p>
-        </div>
-      ))}
+      <div class="doctor-card">
+        <img src={doc1} alt="Doctor 1" />
+        <h4>Dr. Mazen E. Ganim</h4>
+        <p>MBBS, MS, Mch Urology</p>
+        <strong>Family Medicine</strong>
+      </div>
+      <div class="doctor-card">
+        <img src={doc2} alt="Doctor 2" />
+        <h4>Dr. Mazen E. Ganim</h4>
+        <p>MBBS, MD, DM Rheumatology</p>
+        <strong>Pathology</strong>
+      </div>
+      <div class="doctor-card">
+        <img src={doc3} alt="Doctor 3" />
+        <h4>Dr. Howard D. Axe</h4>
+        <p>MBBS, MD Anesthesia</p>
+        <strong>Obstetrics</strong>
+      </div>
+      <div class="doctor-card">
+        <img src={doc4} alt="Doctor 4" />
+        <h4>Dr. Mahsa Rezaei, MD</h4>
+        <p>MBBS, MD, DM Cardiology</p>
+        <strong>Emergency Medicine</strong>
+      </div>
+      <div class="doctor-card">
+        <img src={doc5} alt="Doctor 5" />
+        <h4>Dr. Dilip Anmangandla, MD</h4>
+        <p>MBBS, MS Gyne & Obs</p>
+        <strong>Urology</strong>
+      </div>
+      <div class="doctor-card">
+        <img src={doc6} alt="Doctor 6" />
+        <h4>Dr. Marion Carson, MD</h4>
+        <p>MBBS, MS, Mch Neurosurgery</p>
+        <strong>Neurology</strong>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .doctors {
+  .why-choose, .doctors {
     padding: 4rem 2rem;
-    background: #fff;
+    background: #f9f9f9;
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  .text-center {
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
   }
 
-  .title small {
-    text-transform: uppercase;
-    color: #777;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-  }
-
-  .title h2 {
-    font-size: 2.5rem;
-    margin: 0.5rem 0;
-  }
-
-  .title p {
-    margin-bottom: 2rem;
-    color: #555;
-  }
-
-  .grid {
+  .features {
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: center;
   }
 
-  .card {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 12px;
+  .feature {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .image-center {
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-center img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .button {
+    background: black;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .button.secondary {
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .doctors .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .doctor-card {
     text-align: center;
   }
 
-  .card img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
+  .doctor-card img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 1rem;
   }
 
-  .card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0.5rem 0;
+  .doctor-card h4 {
+    margin-bottom: 0.25rem;
   }
 
-  .card .credentials {
-    font-size: 0.9rem;
-    color: #444;
+  .doctor-card p {
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
   }
 
-  .card .specialty {
+  .doctor-card strong {
     font-size: 0.85rem;
-    color: #888;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-top: 0.25rem;
+    color: #444;
   }
 </style>
