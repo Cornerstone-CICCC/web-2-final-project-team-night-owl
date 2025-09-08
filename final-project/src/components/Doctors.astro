@@ -55,13 +55,14 @@ import doc6 from '../assets/img/doctors/doc6.png';
       </div>
     </div>
 
-    <button class="view-more-btn">View more</button>
+    <button id="view-more-btn">View more</button>
   </div>
 </section>
 
 <style>
-  
-
+  .doctors{
+    padding: 4.8rem 3.1rem;
+  }
   .doctors .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -115,9 +116,9 @@ import doc6 from '../assets/img/doctors/doc6.png';
     display: none !important;
   }
 
-  .view-more-btn {
+  #view-more-btn {
   display: block;
-  margin: 2rem auto;
+  margin: 6.4rem auto 0;
   padding: 10px 24px;
   font-size: 16px;
   border: 1px solid #000;
@@ -125,16 +126,17 @@ import doc6 from '../assets/img/doctors/doc6.png';
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
 }
 
-.view-more-btn:hover {
+#view-more-btn:hover {
   background: #f5f5f5;
 }
 
 
   .doctor-header {
   text-align: center;
-  padding-top: 3rem;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -162,7 +164,7 @@ import doc6 from '../assets/img/doctors/doc6.png';
       grid-template-columns: 1fr;
     }
 
-    .view-more-btn {
+    #view-more-btn {
       display: block;
     }
   }
@@ -173,12 +175,21 @@ import doc6 from '../assets/img/doctors/doc6.png';
     }
 
   }
+  @media screen and (min-width: 769px) {
+    .doctors{
+      padding: 11.2rem 6.4rem;
+    }
+    #view-more-btn{
+      margin-top: 8rem;
+      width: auto;
+    }
+  }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const extraDoctors = document.querySelectorAll('.extra-doctor');
-    const viewMoreBtn = document.querySelector('.view-more-btn');
+    const viewMoreBtn = document.querySelector('#view-more-btn');
     let expanded = false;
 
     function isMobile() {
