@@ -60,8 +60,9 @@ import doc6 from '../assets/img/doctors/doc6.png';
 </section>
 
 <style>
-  
-
+  .doctors{
+    padding: 4.8rem 3.1rem;
+  }
   .doctors .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -117,7 +118,7 @@ import doc6 from '../assets/img/doctors/doc6.png';
 
   #view-more-btn {
   display: block;
-  margin: 2rem auto;
+  margin: 6.4rem auto 0;
   padding: 10px 24px;
   font-size: 16px;
   border: 1px solid #000;
@@ -125,6 +126,8 @@ import doc6 from '../assets/img/doctors/doc6.png';
   cursor: pointer;
   border-radius: 8px;
   transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
 }
 
 #view-more-btn:hover {
@@ -134,7 +137,6 @@ import doc6 from '../assets/img/doctors/doc6.png';
 
   .doctor-header {
   text-align: center;
-  padding-top: 3rem;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -172,6 +174,15 @@ import doc6 from '../assets/img/doctors/doc6.png';
       grid-template-columns: repeat(3, 1fr);
     }
 
+  }
+  @media screen and (min-width: 769px) {
+    .doctors{
+      padding: 11.2rem 6.4rem;
+    }
+    #view-more-btn{
+      margin-top: 8rem;
+      width: auto;
+    }
   }
 </style>
 
