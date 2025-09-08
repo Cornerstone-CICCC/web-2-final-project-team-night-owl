@@ -19,7 +19,6 @@ import doc6 from '../assets/img/doctors/doc6.png';
         Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
       </p>
     </div>
-    
 
     <div class="features">
       <div class="feature-col">
@@ -32,11 +31,11 @@ import doc6 from '../assets/img/doctors/doc6.png';
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</p>
         </div>
       </div>
-    
+
       <div class="image-center">
         <Image src={docImg} alt="Doctor" />
       </div>
-    
+
       <div class="feature-col">
         <div class="feature">
           <h4>Flexible schedule</h4>
@@ -48,7 +47,6 @@ import doc6 from '../assets/img/doctors/doc6.png';
         </div>
       </div>
     </div>
-    
 
     <div class="buttons">
       <a href="/contact" class="button">Book an Appointment</a>
@@ -59,8 +57,7 @@ import doc6 from '../assets/img/doctors/doc6.png';
 
 <section class="doctors">
   <div class="container">
-    <div class="text-center">
-      <small>Doctors</small>
+    <div class="doctor-header">
       <h2>Doctors</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
@@ -73,228 +70,339 @@ import doc6 from '../assets/img/doctors/doc6.png';
         <strong>Family Medicine</strong>
       </div>
       <div class="doctor-card">
-        <Image src={doc2} alt="Doctor 1" />
+        <Image src={doc2} alt="Doctor 2" />
         <h4>Dr. Mazen E. Ganim</h4>
         <p>MBBS, MD, DM Rheumatology</p>
         <strong>Pathology</strong>
       </div>
       <div class="doctor-card">
-        <Image src={doc3} alt="Doctor 1" />
+        <Image src={doc3} alt="Doctor 3" />
         <h4>Dr. Howard D. Axe</h4>
         <p>MBBS, MD Anesthesia</p>
         <strong>Obstetrics</strong>
       </div>
-      <div class="doctor-card">
-        <Image src={doc4} alt="Doctor 1" />
+      <div class="doctor-card extra-doctor">
+        <Image src={doc4} alt="Doctor 4" />
         <h4>Dr. Mahsa Rezaei, MD</h4>
         <p>MBBS, MD, DM Cardiology</p>
         <strong>Emergency Medicine</strong>
       </div>
-      <div class="doctor-card">
-        <Image src={doc5} alt="Doctor 1" />
+      <div class="doctor-card extra-doctor">
+        <Image src={doc5} alt="Doctor 5" />
         <h4>Dr. Dilip Anmangandla, MD</h4>
         <p>MBBS, MS Gyne & Obs</p>
         <strong>Urology</strong>
       </div>
-      <div class="doctor-card">
-        <Image src={doc6} alt="Doctor 1" />
+      <div class="doctor-card extra-doctor">
+        <Image src={doc6} alt="Doctor 6" />
         <h4>Dr. Marion Carson, MD</h4>
         <p>MBBS, MS, Mch Neurosurgery</p>
         <strong>Neurology</strong>
       </div>
     </div>
+
     <button class="view-more-btn">View more</button>
   </div>
 </section>
 
 <style>
+  /* WHY CHOOSE STYLES */
   .why-choose {
-  padding: 4rem 2rem;
-  background: #f9f9f9;
-}
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+  }
 
-.why-choose .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  .why-choose .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.why-choose .text-center {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-}
+  .why-choose .text-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+  }
 
-.why-choose .features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
+  .why-choose .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
 
-.feature-col {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+  .feature-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-.bold-title {
-  font-weight: 700;
-  font-size: 3.5rem;
-  padding: 2rem;
-}
+  .bold-title {
+    font-weight: 700;
+    font-size: 3.5rem;
+    padding: 2rem;
+  }
 
-.image-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .image-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.image-center img {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+  .image-center img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 
-.feature h4 {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
+  .feature h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
 
-.feature p {
-  font-size: 1.2rem;
-  color: #333;
-  max-width: 150px;
-  margin: 0 auto;
-  padding: 1rem;
-}
+  .feature p {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 150px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
 
-.button {
-  background-color: transparent;
-  color: black;
-  padding: 1rem 2rem;          
-  border: 1px solid black;
-  border-radius: 8px;          
-  font-weight: 500;
-  font-size: 1.3rem;           
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+  .button {
+    background-color: transparent;
+    color: black;
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
 
+  .button:hover {
+    background-color: black;
+    color: white;
+  }
 
-.button:hover {
-  background-color: black;
-  color: white;
-}
+  .button.primary {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    font-weight: 600;
+  }
 
-.button.primary {
-  background-color: black;
-  color: white;
-  border: 1px solid black;
-  font-weight: 600;
-}
+  .button.primary:hover {
+    background-color: #333;
+  }
 
-.button.primary:hover {
-  background-color: #333;
-}
+  .button.secondary:hover {
+    background-color: black;
+    color: white;
+  }
 
-.button.secondary:hover {
-  background-color: black;
-  color: white;
-}
+  /* DOCTORS SECTION STYLES */
 
   .doctors .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .doctor-card {
     text-align: center;
+    padding: 1rem 0;
   }
 
   .doctor-card img {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   .doctor-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 0.25rem;
+    color: #222;
   }
 
   .doctor-card p {
-    margin-bottom: 0.25rem;
     font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.3rem;
   }
 
   .doctor-card strong {
-    font-size: 0.85rem;
-    color: #444;
+    display: block;
+    font-size: 0.9rem;
+    color: #111;
+    font-weight: 500;
+    margin-top: 0.25rem;
   }
 
-  @media (max-width: 1024px) {
-  .why-choose .features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    text-align: center;
-    padding: 2rem;
+  .extra-doctor {
+    display: block;
   }
 
-  .why-choose .feature-col {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .why-choose .feature {
-    padding: 1 2rem;
-    max-width: 300px;
-  }
-
-  .why-choose .image-center {
+  .extra-doctor.hidden {
     display: none !important;
   }
 
-  .why-choose .buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .why-choose .button {
-    width: 100%;
-    max-width: 150px;
-    padding: 0.8rem 1.2rem;
-    font-size: 1.1rem;
-  }
-
-  .doctors .grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .doctors .grid {
-    grid-template-columns: 1fr;
-  }
+  .view-more-btn {
+  display: block;
+  margin: 2rem auto;
+  padding: 10px 24px;
+  font-size: 16px;
+  border: 1px solid #000;
+  background: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
+.view-more-btn:hover {
+  background: #f5f5f5;
+}
+
+
+  .doctor-header {
+  text-align: center;
+  padding-top: 3rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.doctor-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-header p {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+
+
+  @media (max-width: 1024px) {
+    .why-choose .features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .why-choose .feature-col {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .why-choose .feature {
+      padding: 1 2rem;
+      max-width: 300px;
+    }
+
+    .why-choose .image-center {
+      display: none !important;
+    }
+
+    .why-choose .buttons {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .why-choose .button {
+      width: 100%;
+      max-width: 150px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .doctors .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .view-more-btn {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .doctors .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const extraDoctors = document.querySelectorAll('.extra-doctor');
+    const viewMoreBtn = document.querySelector('.view-more-btn');
+    let expanded = false;
+
+    function isMobile() {
+      return window.innerWidth <= 1024;
+    }
+
+    function toggleDoctors(show) {
+      extraDoctors.forEach(card => {
+        card.classList.toggle('hidden', !show);
+      });
+      viewMoreBtn.textContent = show ? 'Show less' : 'View more';
+    }
+
+    function initDoctorsDisplay() {
+      if (isMobile()) {
+        toggleDoctors(false); 
+        expanded = false;
+      } else {
+        extraDoctors.forEach(card => card.classList.remove('hidden')); 
+        viewMoreBtn.textContent = 'View more'; 
+        expanded = false;
+      }
+    }
+
+    initDoctorsDisplay();
+
+    viewMoreBtn.addEventListener('click', () => {
+      if (!isMobile()) return;
+      expanded = !expanded;
+      toggleDoctors(expanded);
+    });
+
+    window.addEventListener('resize', () => {
+      initDoctorsDisplay();
+    });
+  });
+</script>
+
