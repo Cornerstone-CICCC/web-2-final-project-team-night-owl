@@ -55,7 +55,7 @@ import doc6 from '../assets/img/doctors/doc6.png';
       </div>
     </div>
 
-    <button class="view-more-btn">View more</button>
+    <button id="view-more-btn">View more</button>
   </div>
 </section>
 
@@ -178,7 +178,7 @@ import doc6 from '../assets/img/doctors/doc6.png';
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const extraDoctors = document.querySelectorAll('.extra-doctor');
-    const viewMoreBtn = document.querySelector('.view-more-btn');
+    const viewMoreBtn = document.querySelector('#view-more-btn');
     let expanded = false;
 
     function isMobile() {
