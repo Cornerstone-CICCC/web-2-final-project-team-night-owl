@@ -1,3 +1,76 @@
 <section>
-  
+  <div class="help">
+    <div class="help-txt">
+      <h3>How we can help...</h3>
+      <p>We offer a wide range of procedures to help you get the perfect smile.<br><a href="#">Request a quote</a></p>
+    </div>
+    <div class="help-btn"><a href="#">Book an Appointment</a></div>
+  </div>
 </section>
+
+<style>
+  a{
+    transition: .3s ease;
+  }
+  section{
+    padding: 48px 24px;
+  }
+  .help{
+    border: 1px solid #000;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+  h3{
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 24px;
+  }
+  .help-txt p{
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+  .help-txt a{
+    text-decoration: underline;
+  }
+  .help-txt a:hover{
+    text-decoration: none;
+  }
+  .help-btn a{
+    display: inline-block;
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+    line-height: 1.5;
+    padding: 12px 24px;
+    border-radius: 5px;
+  }
+  .help-btn a:hover{
+    background: #fff;
+    color: #000;
+  }
+  @media screen and (min-width: 769px){
+    section{
+      background: #f4f4f4;
+      padding: 112px 64px;
+    }
+    .help{
+      padding: 48px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+      max-width: 1312px;
+      margin-inline: auto;
+    }
+    h3{
+      font-size: 4rem;
+      line-height: 1.2;
+    }
+    .help-btn{
+      flex: 0 1 207px;
+    }
+  }
+</style>

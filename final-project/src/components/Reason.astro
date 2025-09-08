@@ -1,3 +1,178 @@
+---
+import { Image } from 'astro:assets';
+import humanImg from '../assets/img/reason/human.png';
+import arrowIcon from '../../assets/img/reason/icon-arrow.svg';
+---
+
 <section>
-  
+  <h2>
+    <span>Why choose us</span>
+    <span>Why choose Ddsgnr clinic?</span>
+  </h2>
+  <p class="reason-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p>
+  <div class="reason-box">
+    <dl>
+      <div>
+        <dt>Easy booking</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</dd>
+      </div>
+      <div>
+        <dt>Experience</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</dd>
+      </div>
+    </dl>
+    <div class="reason-img">
+      <img src={humanImg.src} alt="human image">
+    </div>
+    <dl>
+      <div>
+        <dt>Flexible schedule</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</dd>
+      </div>
+      <div>
+        <dt>Best price guarantee</dt>
+        <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</dd>
+      </div>
+    </dl>
+  </div>
+  <div class="reason-btn">
+    <div class="btn-apo"><a href="#">Book an Appointment</a></div>
+    <div class="btn-more"><a href="#">Learn more</a></div>
+  </div>
 </section>
+
+<style>
+  a{
+    transition: .3s ease;
+  }
+  section{
+    padding: 48px 24px;
+    text-align: center;
+  }
+  h2{
+    margin-bottom: 24px;
+  }
+  h2 span{
+    display: block;
+  }
+  h2 span:first-child{
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  h2 span:last-child{
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 1.3;
+  }
+  .reason-lead{
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 80px;
+  }
+  .reason-box{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  .reason-box dl{
+    padding-inline: 13vw;
+  }
+  .reason-box dl>div{
+    padding: 24px;
+  }
+  .reason-box dt{
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .reason-box dd{
+    line-height: 1.5;
+  }
+  .reason-img{
+    display: none;
+  }
+  .reason-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .reason-btn a{
+    display: inline-block;
+    line-height: 1.5;
+  }
+  .btn-apo a{
+    padding: 12px 24px;
+    border: 1px solid;
+    border-radius: 5px;
+  }
+  .btn-apo a:hover{
+    background: #000;
+    color: #fff;  
+  }
+  .btn-more a{
+    padding-right: 32px;
+    position: relative;
+  }
+  .btn-more a:after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(/icon-arrow.svg) no-repeat center center / contain;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: .3s ease;
+  }
+  .btn-more a:hover{
+    opacity: .7;
+  }
+  .btn-more a:hover:after{
+    right: -3px;
+  }
+  @media screen and (min-width: 769px){
+    section{
+      background: #f4f4f4;
+      padding: 112px 64px;
+    }
+    h2 span:last-child{
+      font-size: 4.8rem;
+      line-height: 1.2;
+    }
+    .reason-lead{
+      max-width: 1312px;
+      margin-inline: auto;
+    }
+    .reason-box{
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 2.6%;
+      max-width: 1312px;
+      margin-inline: auto;
+    }
+    .reason-box dl{
+      padding-inline: 2.4%;
+      flex-basis: 26%;
+    }
+    .reason-box dl>div{
+      padding: 32px 1%;
+    }
+    .reason-box dl>div+div{
+      margin-top: 32px;
+    }
+    .reason-img{
+      display: block;
+      flex-basis: 48%;
+      max-width: 540px;
+    }
+    .reason-img img{
+      width: 100%;
+    }
+  }
+</style>

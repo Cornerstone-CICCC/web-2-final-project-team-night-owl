@@ -1,3 +1,122 @@
-<section>
-  
+---
+import { Image } from 'astro:assets';
+import doctorImg from '../assets/img/about/about1.png';
+import doctorImg2 from '../assets/img/about/about2.png';
+---
+
+<section class="about">
+  <div class="container">
+    <div class="text">
+      <small>About us</small>
+      <h2>Welcome to Ddsgnr clinic</h2>
+      <p class="item-pc">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+      </p>
+      <p class="item-sp">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+      </p>
+      <a href="/contact" class="button">Book an Appointment</a>
+    </div>
+
+    <div class="image-doctor">
+      <img src={doctorImg.src} alt="Doctor" class="item-pc">
+      <img src={doctorImg2.src} alt="Doctor" class="item-sp">
+    </div>
+  </div>
 </section>
+
+<style>
+  a{
+    transition: .3s ease;
+  }
+  .about {
+    padding: 4.8rem 2.4rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    max-width: 1312px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .text small {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    font-weight: 600;
+  }
+
+  .text h2 {
+    font-size: 3.2rem;
+    font-weight: 700;;
+    margin-bottom: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .text p {
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+
+  .button {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 1.2rem 2.4rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+    border: 1px solid;
+  }
+  .button:hover {
+    background: #fff;
+    color: #000;
+  }
+  .image-doctor{
+    max-width: 379px;
+  }
+  .image-doctor img{
+    width: 100%;
+  }
+  .item-pc{
+    display: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    .about{
+      padding: 11.2rem 6.4rem;
+    }
+    .container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .text h2 {
+      font-size: 4.8rem;
+      line-height: 1.2;
+    }
+    .text p {
+      margin-bottom: 4.8rem;
+    }
+    .button {
+      width: auto;
+      padding: .8rem 2rem;
+    }
+    .image-doctor {
+      min-width: 50%;
+    }
+    .item-pc{
+      display: block;
+    }
+    .item-sp{
+      display: none;
+    }
+  }
+</style>

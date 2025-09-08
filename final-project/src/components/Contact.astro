@@ -1,3 +1,353 @@
-<section>
+---
+import { Image } from 'astro:assets';
+import contactImg from '../assets/img/contact/cont1.png';
+---
+
+<section class="contact">
+  <div class="container">
+    <div class="form-section">
+      <div class="text">
+        <small>Tagline</small>
+        <h2>Contact us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+        <input type="hidden" name="form-name" value="contact" />
+
+        <div class="grid">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" name="phone" id="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Select service</label>
+            <select name="service" id="service">
+              <option value="">-- Select --</option>
+              <option value="general">General Consultation</option>
+              <option value="emergency">Emergency</option>
+              <option value="specialist">Specialist</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="time">Select time</label>
+            <select name="time" id="time">
+              <option value="">-- Select --</option>
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="5" placeholder="Type your message..."></textarea>
+          </div>
+
+          <div class="form-group full checkbox">
+            <label for="terms">
+              <input type="checkbox" name="terms" id="terms" required />
+              I accept the <a href="#">Terms</a>
+            </label>
+          </div>
+        </div>
+
+        <div id="formMessage" class="form-message"></div>
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
+
+    <div class="image-section">
+      <img src={contactImg.src} alt="Doctors Contact" />
+    </div>
+  </div>
   
 </section>
+
+<style>
+  .contact {
+    padding: 4rem 2rem;
+    background: #fff;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .form-section {
+    flex: 1 1 60%;
+  }
+
+  .text small {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+
+  .text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .text p {
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group.full {
+    grid-column: span 2;
+  }
+
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: black;
+  }
+
+  .checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: black;
+  border-color: black;
+}
+
+.checkbox input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+
+  .button {
+    margin-top: 1rem;
+    background: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .button:hover {
+    background: #333;
+  }
+
+  .image-section {
+    flex: 1 1 50%;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .image-section img {
+    width: auto;
+    max-width: 100%;
+    max-height: 600px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .form-message {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 6px;
+    display: none;
+  }
+
+  .form-message.success {
+    display: block;
+    background-color: #e6f4ea;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+  }
+
+  .form-message.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+  }
+
+  @media (min-width: 998px) {
+    .container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .image-section {
+      display: flex; 
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+      grid-column: span 1;
+    }
+
+    .image-section {
+      display: none;
+    }
+    .contact {
+    background-color: #f4f4f4;
+  }
+  }
+</style>
+
+<script type="module">
+  const form = document.getElementById('contactForm');
+  const messageBox = document.getElementById('formMessage');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const button = form.querySelector('button');
+    button.disabled = true;
+    button.textContent = 'Sending...';
+
+    messageBox.textContent = '';
+    messageBox.className = 'form-message';
+
+    const formData = new FormData(form);
+
+    if (!formData.get('name') || !formData.get('email') || !formData.get('terms')) {
+      messageBox.textContent = 'Please fill in all required fields and accept the terms.';
+      messageBox.classList.add('error');
+      button.disabled = false;
+      button.textContent = 'Submit';
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.get('email'))) {
+      messageBox.textContent = 'Please enter a valid email address.';
+      messageBox.classList.add('error');
+      button.disabled = false;
+      button.textContent = 'Submit';
+      return;
+    }
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (res.ok) {
+        form.reset();
+        messageBox.textContent = 'Thank you! Your message has been sent.';
+        messageBox.classList.add('success');
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (err) {
+      messageBox.textContent = 'Something went wrong. Please try again later.';
+      messageBox.classList.add('error');
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Submit';
+    }
+  });
+</script>

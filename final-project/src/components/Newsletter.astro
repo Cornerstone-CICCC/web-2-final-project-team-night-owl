@@ -1,3 +1,174 @@
 <section>
-  
+  <div class="newsletter">
+    <h2>Subscribe to our newsletter</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      varius enim in eros elementum tristique.
+    </p>
+    <div class="form">
+      <form class="sign-up-form">
+        <input
+          type="email"
+          id="email-input"
+          name="email"
+          pattern="^[a-zA-Z0-9_.+]+@gmail\.com$"
+          placeholder="Enter your email"
+          autocomplete="off"
+        />
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </form>
+      <p>
+        By clicking Sign Up you're confirming that you agree with our Terms and
+        Conditions.
+      </p>
+    </div>
+  </div>
 </section>
+
+<style>
+  section {
+    display: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    section {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(244, 244, 244, 1);
+    }
+
+    .newsletter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.4rem;
+      max-width: 768px;
+      padding: 11.2rem 0;
+    }
+
+    h2 {
+      font-size: 4.8rem;
+      font-weight: 700;
+      line-height: 120%;
+    }
+
+    .newsletter p {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.6rem;
+      padding-top: 1rem;
+    }
+
+    .sign-up-form {
+      display: flex;
+      gap: 1.6rem;
+    }
+
+    #email-input {
+      background-color: rgba(255, 255, 255, 1);
+      padding: 1.2rem;
+      min-width: 40rem;
+      border: 1px solid rgba(0, 0, 0, 1);
+      outline: none;
+      border-radius: 5px;
+      transition: all 0.5s linear;
+    }
+
+    #email-input::placeholder {
+      color: rgba(80, 80, 80, 1);
+      line-height: 150%;
+    }
+
+    #email-input:hover {
+      border-color: #555;
+    }
+
+    #email-input:focus {
+      border-color: #000;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    #email-input:active {
+      transform: scale(0.98);
+      border-color: #333;
+    }
+
+    .submit-btn {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(0, 0, 0, 1);
+      border: 1px solid rgba(0, 0, 0, 1);
+      padding: 1.2rem 2.4rem;
+      border-radius: 5px;
+      transition: all 0.5s linear;
+    }
+
+    .submit-btn:hover {
+      background-color: rgba(255, 255, 255, 1);
+      color: rgba(0, 0, 0, 1);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .form p {
+      font-size: 1.2rem;
+      line-height: 150%;
+    }
+  }
+</style>
+
+<script>
+  import emailjs from "@emailjs/browser";
+
+  const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+
+  (function () {
+    emailjs.init({
+      publicKey: publicKey,
+    });
+  })();
+
+  const newsletterForm = document.querySelector("form");
+
+  newsletterForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(newsletterForm);
+    const userInput = formData.get("email");
+
+    const message = `
+    A user just subscribed to your newsletter.
+    Email: ${userInput}
+    `;
+
+    const templateParams = {
+      title: "New Newsletter Subscription!",
+      name: "Ddsgnr",
+      message: message.trim(),
+    };
+
+    if (!userInput) {
+      alert("Please enter your email before subscribing.");
+      return;
+    }
+
+    emailjs.send(serviceID, templateID, templateParams).then(
+      () => {
+        alert("Thanks for subscribing!");
+        newsletterForm?.reset();
+      },
+      (error) => {
+        console.error("FAILED...", error);
+        alert("Something went wrong. Please try again.");
+      }
+    );
+  });
+</script>

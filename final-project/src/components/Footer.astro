@@ -1,3 +1,482 @@
+---
+import { Image } from "astro:assets";
+
+import logo from "../assets/img/logo.svg";
+import facebook from "../assets/img/facebook.svg";
+import instagram from "../assets/img/instagram.svg";
+import twitter from "../assets/img/twitter.svg";
+import linkedin from "../assets/img/linkedin.svg";
+---
+
 <footer>
-  
+  <div class="mobile-footer">
+    <div class="footer-section-one">
+      <div class="logo">
+        <a href="/">
+          <img src={logo.src} alt="Logo" />
+        </a>
+      </div>
+      <nav>
+        <menu>
+          <li>
+            <a href="/about">About us</a>
+          </li>
+          <li>
+            <a href="#">Category</a>
+          </li>
+          <li>
+            <a href="#">Follow Us</a>
+          </li>
+        </menu>
+      </nav>
+      <div class="social-icons">
+        <li>
+          <a href="#">
+            <img src={facebook.src} alt="Facebook icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src={instagram.src} alt="Instagram icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src={twitter.src} alt="Twitter icon" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src={linkedin.src} alt="LinkedIn icon" />
+          </a>
+        </li>
+      </div>
+    </div>
+    <div class="footer-section-two">
+      <p>2023 Ddsgnr. All right reserved.</p>
+      <div class="links">
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#">Terms of Service</a>
+        </li>
+        <li>
+          <a href="#">Cookies Settings</a>
+        </li>
+      </div>
+    </div>
+  </div>
+  <div class="desktop-footer">
+    <div class="wrapper">
+      <div class="desktop-section-one">
+        <div class="section-one">
+          <div class="logo">
+            <a href="/">
+              <img src={logo.src} alt="Logo" />
+            </a>
+          </div>
+          <p>
+            Join our newsletter to stay up to date on features and releases.
+          </p>
+          <div class="form">
+            <form>
+              <input
+                type="email"
+                id="email-input"
+                name="email"
+                pattern="^[a-zA-Z0-9_.+]+@gmail\.com$"
+                placeholder="Enter your email"
+                autocomplete="off"
+              />
+              <button type="submit" class="submit-btn">Subscribe</button>
+            </form>
+            <p>
+              By subscribing you agree to with our <a href="#">Privacy Policy</a
+              > and provide consent to receive updates from our company.
+            </p>
+          </div>
+        </div>
+        <div class="section-two">
+          <div class="about">
+            <p>About Us</p>
+            <li>
+              <a href="/about">Home</a>
+            </li>
+            <li>
+              <a href="/doctors">Doctors</a>
+            </li>
+            <li>
+              <a href="#">Categories</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </div>
+          <div class="category">
+            <p>Category</p>
+            <li>
+              <a href="#">Neurology</a>
+            </li>
+            <li>
+              <a href="#">Surgery</a>
+            </li>
+            <li>
+              <a href="#">Defibrillators</a>
+            </li>
+            <li>
+              <a href="#">Diagnostic</a>
+            </li>
+            <li>
+              <a href="#">Anesthesia</a>
+            </li>
+            <li>
+              <a href="#">Pumps</a>
+            </li>
+          </div>
+          <div class="follow">
+            <p>Follow Us</p>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={facebook.src} alt="Facebook icon" />
+                </span>
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={instagram.src} alt="Instagram icon" />
+                </span>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={twitter.src} alt="Twitter icon" />
+                </span>
+                <span>Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="icon">
+                  <img src={linkedin.src} alt="LinkedIn icon" />
+                </span>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+      <div class="desktop-section-two">
+        <p>2023 Ddsgnr. All right reserved.</p>
+        <div class="desktop-links">
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Terms of Service</a>
+          </li>
+          <li>
+            <a href="#">Cookies Settings</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<style>
+  .desktop-footer {
+    display: none;
+  }
+  .mobile-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    padding: 4.8rem 2.4rem;
+  }
+
+  .footer-section-one {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  menu {
+    display: flex;
+    gap: 3.2rem;
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+  }
+
+  menu li a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+    padding-left: 0.7rem;
+    transition: all 0.5s linear;
+  }
+
+  .social-icons li a img:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-section-two {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    gap: 2.4rem;
+    padding-top: 3.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 1);
+  }
+
+  .links {
+    list-style: none;
+    display: flex;
+    gap: 2.4rem;
+    text-decoration: underline;
+  }
+
+  @media screen and (min-width: 769px) {
+    .mobile-footer {
+      display: none;
+    }
+
+    .desktop-footer {
+      display: block;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+      padding: 8rem 6.4rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .desktop-section-one {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .section-one {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+      max-width: 500px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    form {
+      display: flex;
+      gap: 1.6rem;
+    }
+
+    #email-input {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 5px;
+      padding: 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 1);
+      flex-grow: 1;
+      outline: none;
+      transition: all 0.5s linear;
+    }
+
+    #email-input::placeholder {
+      color: rgba(80, 80, 80, 1);
+      line-height: 150%;
+    }
+
+    #email-input:hover {
+      border-color: #555;
+    }
+
+    #email-input:focus {
+      border-color: #000;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    }
+
+    #email-input:active {
+      transform: scale(0.98);
+      border-color: #333;
+    }
+
+    button {
+      padding: 1.2rem 2.4rem;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 1);
+      transition: all 0.5s linear;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 1);
+      color: rgba(255, 255, 255, 1);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .form p {
+      font-size: 1.2rem;
+    }
+
+    .form p a {
+      text-decoration: underline;
+    }
+
+    .section-two {
+      display: flex;
+      gap: 4rem;
+      justify-content: space-evenly;
+      width: 50%;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .about p {
+      font-weight: 600;
+    }
+
+    .about li {
+      font-size: 1.4rem;
+    }
+
+    .about li a:hover {
+      text-decoration: underline;
+    }
+
+    .category {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .category p {
+      font-weight: 600;
+    }
+
+    .category li {
+      font-size: 1.4rem;
+    }
+
+    .category li a:hover {
+      text-decoration: underline;
+    }
+
+    .follow {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .follow p {
+      font-weight: 600;
+    }
+
+    .follow li {
+      font-size: 1.4rem;
+    }
+
+    .follow li a {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .follow li a:hover {
+      text-decoration: underline;
+    }
+
+    .follow li:nth-child(2) a .icon {
+      padding: 0 4px;
+    }
+
+    .desktop-section-two {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 3.2rem;
+      border-top: 1px solid rgba(0, 0, 0, 1);
+    }
+
+    .desktop-section-two p {
+      font-size: 1.4rem;
+    }
+
+    .desktop-links {
+      list-style: none;
+      display: flex;
+      gap: 2.4rem;
+      text-decoration: underline;
+    }
+  }
+</style>
+
+<script>
+  import emailjs from "@emailjs/browser";
+
+  const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+  const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY;
+
+  (function () {
+    emailjs.init({
+      publicKey: publicKey,
+    });
+  })();
+
+  const form = document.querySelector("form");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const userInput = formData.get("email");
+
+    const message = `
+    A user just subscribed to your newsletter.
+    Email: ${userInput}
+    `;
+
+    const templateParams = {
+      title: "New Newsletter Subscription!",
+      name: "Ddsgnr",
+      message: message.trim(),
+    };
+
+    if (!userInput) {
+      alert("Please enter your email before subscribing.");
+      return;
+    }
+
+    emailjs.send(serviceID, templateID, templateParams).then(
+      () => {
+        alert("Thanks for subscribing!");
+        form?.reset();
+      },
+      (error) => {
+        console.error("FAILED...", error);
+        alert("Something went wrong. Please try again.");
+      }
+    );
+  });
+</script>
