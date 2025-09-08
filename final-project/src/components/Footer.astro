@@ -80,7 +80,7 @@ import linkedin from "../assets/img/linkedin.svg";
             Join our newsletter to stay up to date on features and releases.
           </p>
           <div class="form">
-            <form>
+            <form class="footer-form">
               <input
                 type="email"
                 id="email-input"
@@ -444,7 +444,7 @@ import linkedin from "../assets/img/linkedin.svg";
     });
   })();
 
-  const form = document.querySelector("form");
+  const form = document.querySelector(".footer-form");
 
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
